@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:provider_project/model/pin-entry.dart';
-import 'package:provider_project/widget/provider.dart';
 
 class ProviderPage extends StatefulWidget {
   const ProviderPage({super.key});
@@ -20,7 +18,7 @@ class _ProviderPageState extends State<ProviderPage> {
           title: const Text('Provider'),
           backgroundColor: const Color.fromARGB(255, 3, 32, 101),
         ),
-        body: PinInputScreen(),
+        body: const PinInputScreen(),
       ),
     );
   }
@@ -51,6 +49,7 @@ class PinInputScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              // ignore: sized_box_for_whitespace
               Container(
                 height: 40,
                 width: 40,
@@ -59,19 +58,19 @@ class PinInputScreen extends StatelessWidget {
                     Provider.of<PinInputProvider>(context, listen: false)
                         .setPinCode(value);
                   },
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       counterText: '',
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(10)))),
                   maxLength: 1,
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 20),
+                  style: const TextStyle(fontSize: 20),
                   keyboardType: TextInputType.number,
                 ),
               )
             ],
           ),
-          SizedBox(
+          const SizedBox(
             width: 10,
             height: 10,
           ),
